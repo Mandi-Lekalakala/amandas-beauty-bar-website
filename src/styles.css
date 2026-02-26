@@ -1,13 +1,24 @@
-body {
-  margin: 0;
-  background-color: #e2c5b5;
+/* Entire Html  */
+
+html {
+  scroll-behavior: smooth;
 }
 
-/* Header */
+body {
+  margin: 0;
+  background-color: #fff;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Header Content*/
 
 .site-header {
-  background-color: #5c3a2e;
+  background-color: #28170b;
   padding: 15px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-inner {
@@ -15,16 +26,15 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
+/* Left Brand Name */
 .brand-name {
   color: #e6c97a;
-  font-family: "Parisienne", cursive; /* elegant script */
-  font-weight: 550;
-  font-size: 25px;
+  font-family: "Parisienne", cursive;
+  font-size: 20px;
   text-decoration: none;
   padding-left: 15px;
 }
-
+/* Navigation Links */
 .nav-list {
   list-style: none;
   display: flex;
@@ -37,68 +47,110 @@ body {
 .nav-list a {
   color: #e6c97a;
   text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s ease;
+  font-size: 15px;
 }
-
-.btn-book {
-  padding: 10px;
-  background-color: #e6c97a;
-  color: #5c3a2e;
+/* Top Right Bookig Btn */
+.top-right-btn {
+  font-family: "Parisienne", cursive;
+  font-size: 20px;
+  color: #e6c97a;
+  padding-right: 30px;
   text-decoration: none;
-  border-radius: 30px;
-  font-weight: 500;
 }
 
 /* Main Hero */
 
 .hero-container {
-  padding: 70px 70px;
+  padding: 80px 80px;
+  margin-left: 180px;
 }
 
 .hero-inner {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr; /* text gets more space */
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  gap: 20px;
 }
 
-/* Left content */
+/* Left Hero content  */
+
 .hero-title {
-  font-size: 60px;
+  font-family: "Parisienne", cursive;
+  font-size: 68px;
   line-height: 1.05;
-  color: #5c3a2e;
+  color: #28170b;
   margin: 0;
 }
 
 .hero-kicker {
-  font-size: 25px;
+  font-size: 16px;
   font-weight: 600;
-  color: #d4af37;
-  margin-bottom: 18px;
+  color: #a67c00;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .hero-text {
+  font-size: 16px;
   max-width: 450px;
   color: #5c3a2e;
-  line-height: 1.6;
-  margin-bottom: 26px;
+  line-height: 1.5;
+  margin: 0;
 }
 
-/* Buttons layout */
+/* Hero Action Buttons */
+
 .hero-actions {
   display: flex;
-  gap: 14px;
-  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
 }
 
-/* Right media */
-.hero-media {
-  display: flex;
+/* Base button style */
+.hero-btn {
+  padding: 14px 30px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  font-weight: 500;
 }
+/* Gold Booking Button */
+.booking-btn {
+  background: #c9a44c;
+  color: #28170b;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.booking-btn:hover {
+  background: #a67c00;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* View Services Button */
+.services-btn {
+  background: transparent;
+  color: #a67c00;
+  border: 1.5px solid #a67c00;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.services-btn:hover {
+  background: #a67c00;
+  color: #28170b;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Hero Content */
 
 .hero-logo {
-  width: 350px; /* override the HTML width */
+  width: 350px;
   max-width: 100%;
   height: auto;
 }
