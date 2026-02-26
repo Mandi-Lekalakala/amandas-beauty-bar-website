@@ -15,10 +15,15 @@ body {
 .site-header {
   background-color: #28170b;
   padding: 15px;
+  transition: box-shadow 0.3s ease;
 
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .header-inner {
