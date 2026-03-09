@@ -158,7 +158,6 @@ body {
   height: auto;
 }
 
-/* chatgpt copy */
 /* ========== GENERAL SECTION SPACING ========== */
 
 .about-section,
@@ -375,9 +374,9 @@ body {
   background: #e6c97a;
   color: #28170b;
   text-decoration: none;
-  padding: 14px 34px;
+  padding: 12px 20px;
   border-radius: 50px;
-  font-size: 13px;
+  font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 700;
@@ -417,7 +416,7 @@ body {
 
 /* ========== RESPONSIVE ========== */
 
-@media (max-width: 992px) {
+@media (max-width: 990px) {
   .hero-container {
     padding: 60px 30px;
     margin-left: 0;
@@ -469,7 +468,7 @@ body {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
   .hero-title {
     font-size: 48px;
   }
@@ -486,7 +485,9 @@ body {
   }
 
   .last-btn-book {
-    width: 50%;
+    padding: 10px 20px;
+    font-size: 11px;
+    width: 45%;
     text-align: center;
   }
 
