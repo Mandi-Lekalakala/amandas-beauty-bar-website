@@ -367,10 +367,10 @@ body {
   color: #e6c97a;
 }
 
-.muted {
+/* .muted {
   color: #d8c7a0;
   font-size: 14px;
-}
+} */
 
 .contact-cta {
   text-align: center;
@@ -505,5 +505,11 @@ body {
     flex-direction: column;
     text-align: center;
     gap: 6px;
+  }
+
+  #about,
+  #services,
+  #contact {
+    scroll-margin-top: 120px;
   }
 }
