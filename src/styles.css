@@ -140,7 +140,7 @@ body {
 .services-btn {
   background: transparent;
   color: #a67c00;
-  border: 1.5px solid #a67c00;
+  border: 1px solid #a67c00;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
