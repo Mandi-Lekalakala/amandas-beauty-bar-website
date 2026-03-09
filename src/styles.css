@@ -485,6 +485,11 @@ body {
     text-align: center;
   }
 
+  .last-btn-book {
+    width: 50%;
+    text-align: center;
+  }
+
   .footer-inner {
     flex-direction: column;
     text-align: center;
