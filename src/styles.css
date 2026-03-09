@@ -480,8 +480,7 @@ body {
     font-size: 42px;
   }
 
-  .hero-btn,
-  .last-btn-book {
+  .hero-btn {
     width: 100%;
     text-align: center;
   }
