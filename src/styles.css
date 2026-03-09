@@ -470,7 +470,7 @@ body {
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 580px) {
   .hero-title {
     font-size: 48px;
   }
