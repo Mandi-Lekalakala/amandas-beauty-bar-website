@@ -7,15 +7,3 @@ window.addEventListener("scroll", function () {
     header.classList.remove("scrolled");
   }
 });
-const menuToggle = document.getElementById("menu-toggle");
-const menuWrapper = document.getElementById("menu-wrapper");
-
-menuToggle.addEventListener("click", () => {
-  menuWrapper.classList.toggle("active");
-});
-
-document.querySelectorAll(".nav-list a, .top-right-btn").forEach((link) => {
-  link.addEventListener("click", () => {
-    menuWrapper.classList.remove("active");
-  });
-});
