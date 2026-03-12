@@ -63,6 +63,25 @@ body {
   text-decoration: none;
 }
 
+/* Hamburger button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #e6c97a;
+  transition: all 0.3s ease;
+}
+
 /* Main Hero */
 
 .hero-container {
@@ -470,6 +489,25 @@ body {
   .brand-name,
   .top-right-btn {
     padding: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+  }
+
+  .site-nav.open {
+    display: block;
+  }
+
+  /* Also update header-inner — remove flex-direction: column since we'll manage layout differently */
+  .header-inner {
+    flex-wrap: wrap;
+    flex-direction: row; /* override your current column stacking */
   }
 }
 
