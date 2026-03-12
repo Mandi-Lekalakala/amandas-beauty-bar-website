@@ -16,11 +16,13 @@ const overlay = document.getElementById("navOverlay");
 function openMenu() {
   nav.classList.add("open");
   overlay.classList.add("active");
+  hamburger.classList.add("open");
 }
 
 function closeMenu() {
   nav.classList.remove("open");
   overlay.classList.remove("active");
+  hamburger.classList.remove("open");
 }
 
 hamburger.addEventListener("click", () => {

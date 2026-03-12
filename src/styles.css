@@ -482,6 +482,14 @@ body {
     display: flex;
   }
 
+  /* When menu is open, fix the hamburger so it escapes the header stacking context */
+  .hamburger.open {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+  }
+
   .top-right-btn {
     display: none;
   }
