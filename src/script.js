@@ -7,3 +7,10 @@ window.addEventListener("scroll", function () {
     header.classList.remove("scrolled");
   }
 });
+
+const hamburger = document.getElementById("hamburger");
+const nav = document.querySelector(".site-nav");
+
+hamburger.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
