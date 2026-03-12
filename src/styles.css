@@ -312,14 +312,14 @@ body {
 
 .section-header h2 {
   font-family: "Parisienne", cursive;
-  font-size: 45px;
+  font-size: 43px;
   color: #e6c97a;
   margin: 0 0 10px;
   border-bottom: 1px solid rgba(166, 124, 0, 0.4);
 }
 
 .section-subtitle {
-  font-size: 15px;
+  font-size: 13px;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #f4dfaa;
@@ -329,14 +329,15 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  margin-bottom: 35px;
+  margin: 0 auto 35px;
+  max-width: 650px;
 }
 
 .contact-card {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(230, 201, 122, 0.2);
   border-radius: 24px;
-  padding: 30px;
+  padding: 50px 30px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
   text-align: center;
 }
