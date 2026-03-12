@@ -482,9 +482,9 @@ body {
     z-index: 1001;
   }
 
-  /* .top-right-btn {
+  .top-right-btn {
     display: none;
-  } */
+  }
 
   /* Slide-in drawer from right */
   .site-nav {
