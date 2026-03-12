@@ -63,6 +63,36 @@ body {
   text-decoration: none;
 }
 
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 24px;
+  position: relative;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #e6c97a;
+  border-radius: 2px;
+  margin: 5px 0;
+  transition: 0.3s ease;
+}
+
+/* Wrap nav + button together */
+.menu-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 /* Main Hero */
 
 .hero-container {
@@ -455,21 +485,60 @@ body {
     padding: 70px 30px;
   }
 
+  /* Header mobile */
   .header-inner {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand-name {
+    padding-left: 15px;
+  }
+
+  .top-right-btn {
+    padding-right: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-right: 15px;
+  }
+
+  .menu-wrapper {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: #1a0f08;
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 20px 30px;
+    box-sizing: border-box;
+  }
+
+  .menu-wrapper.active {
+    display: flex;
   }
 
   .nav-list {
-    padding-right: 0;
-    gap: 18px;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
   }
 
-  .brand-name,
+  .site-nav {
+    width: 100%;
+  }
+
   .top-right-btn {
-    padding: 0;
+    font-size: 22px;
   }
 }
 
