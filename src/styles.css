@@ -85,8 +85,6 @@ body {
   border: none;
   cursor: pointer;
   padding: 5px;
-  position: relative;
-  z-index: 1100;
 }
 
 .hamburger span {
@@ -480,14 +478,8 @@ body {
   /* Hamburger visible */
   .hamburger {
     display: flex;
-  }
-
-  /* When menu is open, fix the hamburger so it escapes the header stacking context */
-  .hamburger.open {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1100;
+    position: relative;
+    z-index: 1001;
   }
 
   .top-right-btn {
@@ -518,7 +510,7 @@ body {
     flex-direction: column;
     gap: 20px;
     padding: 0;
-    align-items: flex-end;
+    align-items: flex-start;
   }
 
   .nav-list a {
@@ -533,7 +525,7 @@ body {
     font-size: 19px;
     color: #e6c97a;
     text-decoration: none;
-    text-align: right;
+    text-align: left;
   }
 
   .brand-name {
