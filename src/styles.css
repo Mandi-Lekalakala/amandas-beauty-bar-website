@@ -579,4 +579,15 @@ body {
   #contact {
     scroll-margin-top: 100px;
   }
+  .menu-wrapper {
+    padding: 22px 20px 26px;
+  }
+
+  .nav-list a {
+    font-size: 16px;
+  }
+
+  .top-right-btn {
+    font-size: 20px;
+  }
 }
