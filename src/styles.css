@@ -468,12 +468,12 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .about-section,
+  /* .about-section,
   .services-section,
   .contact,
   .site-footer {
     padding: 20px 30px;
-  }
+  } */
 
   /* Hamburger visible */
   .hamburger {
@@ -518,7 +518,7 @@ body {
   }
 
   /* Book Here link inside drawer */
-  .nav-book-link {
+  /* .nav-book-link {
     display: block;
     margin-top: 30px;
     font-family: "Parisienne", cursive;
@@ -526,7 +526,7 @@ body {
     color: #e6c97a;
     text-decoration: none;
     text-align: left;
-  }
+  } */
 
   .brand-name {
     padding: 0 0 0 15px;
