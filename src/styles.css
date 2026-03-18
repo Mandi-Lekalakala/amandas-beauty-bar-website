@@ -470,11 +470,18 @@ body {
 
   .about-section,
   .services-section,
-  .contact,
-  .site-footer {
+  .contact {
     padding: 50px 30px;
   }
 
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  .site-footer {
+    padding: 15px 20px;
+  }
   /* Hamburger visible */
   .hamburger {
     display: flex;
