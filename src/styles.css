@@ -243,7 +243,7 @@ body {
 /* Services */
 
 .services-section {
-  background: linear-gradient(to bottom, #fff, #f9f1e7);
+  background: linear-gradient(to bottom, #f9f1e7, #fff);
 }
 
 .services-header {
@@ -442,7 +442,7 @@ body {
 @media (max-width: 990px) {
   /* Hero */
   .hero-container {
-    padding: 60px 30px;
+    padding: 80px 30px;
     margin-left: 0;
   }
 
@@ -472,7 +472,7 @@ body {
   .services-section,
   .contact,
   .site-footer {
-    padding: 70px 30px;
+    padding: 60px 30px;
   }
 
   /* Hamburger visible */
