@@ -440,7 +440,7 @@ body {
 /* ========== GALLERY ========== */
 
 .gallery {
-  padding: 50px 80px;
+  padding: 30px 80px;
   background: linear-gradient(to bottom, #fff, #f9f1e7);
 }
 
@@ -599,7 +599,7 @@ body {
 
   /* Gallery */
   .gallery {
-    padding: 70px 30px;
+    padding: 60px 30px;
   }
 
   .gallery-grid {
