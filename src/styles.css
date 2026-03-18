@@ -468,12 +468,12 @@ body {
     grid-template-columns: 1fr;
   }
 
-  /* .about-section,
+  .about-section,
   .services-section,
   .contact,
   .site-footer {
     padding: 20px 30px;
-  } */
+  }
 
   /* Hamburger visible */
   .hamburger {
