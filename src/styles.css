@@ -552,6 +552,15 @@ body {
   font-size: 42px;
 }
 
+.footer-inner {
+  flex-direction: column;
+  text-align: center;
+  gap: 8px;
+}
+.site-footer {
+  padding: 15px 20px;
+}
+
 .hero-btn {
   width: 100%;
   text-align: center;
