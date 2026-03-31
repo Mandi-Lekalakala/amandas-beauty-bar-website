@@ -637,3 +637,258 @@ body {
     font-size: 42px;
   }
 }
+
+/* Booking Section */
+
+.booking-section {
+  padding: 80px 80px;
+  background: linear-gradient(to bottom, #fff, #f9f1e7);
+  min-height: 80vh;
+}
+
+.booking-container {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Booking Header */
+.booking-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.booking-title {
+  font-family: "Parisienne", cursive;
+  font-size: 52px;
+  color: #1a0f08;
+  margin: 0 0 10px;
+  border-bottom: 1px solid rgba(166, 124, 0, 0.4);
+}
+
+.booking-subtitle {
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #a67c00;
+  margin: 0;
+}
+
+/* ---- Step Indicator (the 1 2 3 4 progress bar) ---- */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 45px;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e8ddd4;
+  color: #9b7b6b;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #d4c4b8;
+  transition: all 0.3s ease;
+}
+
+.step-label {
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #b09080;
+  transition: color 0.3s ease;
+}
+
+/* Active step (current) */
+.step.active .step-number {
+  background: #c9a44c;
+  color: #28170b;
+  border-color: #c9a44c;
+  box-shadow: 0 0 0 4px rgba(201, 164, 76, 0.2);
+}
+
+.step.active .step-label {
+  color: #a67c00;
+  font-weight: 700;
+}
+
+/* Completed step */
+.step.completed .step-number {
+  background: #28170b;
+  color: #e6c97a;
+  border-color: #28170b;
+}
+
+.step.completed .step-label {
+  color: #5c3a2e;
+}
+
+/* The line connecting the dots */
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: #e0d0c4;
+  max-width: 60px;
+  margin-bottom: 22px; /* pushes line up to align with circles */
+}
+
+/* ---- The Form Card ---- */
+.booking-form {
+  background: #ffffff;
+  border: 1px solid rgba(40, 23, 11, 0.12);
+  border-radius: 24px;
+  padding: 40px 45px;
+  box-shadow: 0 10px 35px rgba(40, 23, 11, 0.08);
+}
+
+/* Step title inside the form */
+.step-title {
+  font-family: "Parisienne", cursive;
+  font-size: 30px;
+  color: #1a0f08;
+  margin: 0 0 28px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(166, 124, 0, 0.3);
+}
+
+/* ---- Form Groups (label + input pairs) ---- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #5c3a2e;
+}
+
+.form-group input,
+.form-group select {
+  padding: 13px 16px;
+  border: 1px solid rgba(40, 23, 11, 0.2);
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+  color: #28170b;
+  background: #fdf8f2;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #c9a44c;
+  box-shadow: 0 0 0 3px rgba(201, 164, 76, 0.15);
+}
+
+.form-group input::placeholder {
+  color: #b09080;
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none; /* removes the default dropdown arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a67c00' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+/* ---- Form Action Buttons ---- */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Next button */
+.btn-next {
+  background: #c9a44c;
+  color: #28170b;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-next:hover {
+  background: #a67c00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Back button */
+.btn-back {
+  background: transparent;
+  color: #a67c00;
+  border: 1px solid #a67c00;
+  padding: 13px 28px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background: #a67c00;
+  color: #28170b;
+}
+
+/* Utility: hidden class used by JS to show/hide steps */
+.hidden {
+  display: none;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 990px) {
+  .booking-section {
+    padding: 60px 30px;
+  }
+
+  .booking-form {
+    padding: 30px 25px;
+  }
+
+  .step-label {
+    display: none; /* hide labels on small screens, keep just the numbers */
+  }
+}
+
+@media (max-width: 580px) {
+  .booking-title {
+    font-size: 42px;
+  }
+
+  .step-line {
+    max-width: 30px;
+  }
+}
