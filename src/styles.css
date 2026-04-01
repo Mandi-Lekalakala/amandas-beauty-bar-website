@@ -868,6 +868,167 @@ body {
   display: none;
 }
 
+/* ---- Calendar Wrapper ---- */
+.calendar {
+  border: 1px solid rgba(40, 23, 11, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+/* ---- Month Navigation (← April 2026 →) ---- */
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #28170b;
+  padding: 14px 20px;
+}
+
+.calendar-month-label {
+  color: #e6c97a;
+  font-family: "Parisienne", cursive;
+  font-size: 22px;
+}
+
+.cal-nav-btn {
+  background: transparent;
+  border: 1px solid rgba(230, 201, 122, 0.4);
+  color: #e6c97a;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-nav-btn:hover {
+  background: #e6c97a;
+  color: #28170b;
+}
+
+/* ---- Calendar Grid ---- */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns = Sun to Sat */
+  background: #fdf8f2;
+}
+
+/* Day name headers (Sun Mon Tue...) */
+.cal-day-name {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #a67c00;
+  background: #fdf8f2;
+  border-bottom: 1px solid rgba(40, 23, 11, 0.08);
+}
+
+/* Individual day cells */
+.cal-cell {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  border: 1px solid rgba(40, 23, 11, 0.05);
+  transition: all 0.2s ease;
+}
+
+/* Empty cells (before the 1st of the month) */
+.cal-empty {
+  background: transparent;
+}
+
+/* Past dates — greyed out */
+.cal-past {
+  color: #ccc;
+  background: #f5f0eb;
+  cursor: not-allowed;
+}
+
+/* Available dates — clickable */
+.cal-available {
+  color: #28170b;
+  cursor: pointer;
+}
+
+.cal-available:hover {
+  background: rgba(201, 164, 76, 0.15);
+  color: #a67c00;
+  font-weight: 700;
+}
+
+/* Selected date — gold highlight */
+.cal-selected {
+  background: #c9a44c !important;
+  color: #28170b !important;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+/* ---- Legend ---- */
+.calendar-legend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 12px;
+  background: #fdf8f2;
+  border-top: 1px solid rgba(40, 23, 11, 0.08);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #5c3a2e;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-dot.available {
+  background: #c9a44c;
+}
+.legend-dot.booked {
+  background: #c0392b;
+}
+.legend-dot.past {
+  background: #ccc;
+}
+
+/* ---- Selected Date Label ---- */
+.selected-date-label {
+  font-size: 14px;
+  color: #b09080;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.selected-date-label.has-date {
+  color: #28170b;
+  font-weight: 700;
+}
+
+/* Disabled next button */
+.btn-next:disabled {
+  background: #e0d0c0;
+  color: #b09080;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 990px) {
   .booking-section {
