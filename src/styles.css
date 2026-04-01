@@ -1040,13 +1040,13 @@ body {
   }
 
   .step-label {
-    display: none; /* hide labels on small screens, keep just the numbers */
+    display: none;
   }
 }
 
 @media (max-width: 580px) {
   .booking-title {
-    font-size: 35px;
+    font-size: 38px;
   }
 
   .step-line {
