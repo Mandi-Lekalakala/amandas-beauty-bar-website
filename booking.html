@@ -150,12 +150,59 @@
           </div>
 
           <!-- ===== STEP 2, 3, 4 coming soon ===== -->
+          <!-- ===== STEP 2: Calendar ===== -->
           <div class="form-step hidden" id="formStep2">
             <h3 class="step-title">Step 2: Pick a Date</h3>
-            <p style="color: #5c3a2e">Calendar coming in the next step!</p>
+
+            <!-- Calendar widget -->
+            <div class="calendar">
+              <!-- Month navigation -->
+              <div class="calendar-nav">
+                <button type="button" class="cal-nav-btn" id="calPrev">
+                  &#8592;
+                </button>
+                <span class="calendar-month-label" id="calendarMonthLabel"
+                  >April 2026</span
+                >
+                <button type="button" class="cal-nav-btn" id="calNext">
+                  &#8594;
+                </button>
+              </div>
+
+              <!-- Day name headers: Sun Mon Tue ... -->
+              <div class="calendar-grid" id="calendarGrid">
+                <div class="cal-day-name">Sun</div>
+                <div class="cal-day-name">Mon</div>
+                <div class="cal-day-name">Tue</div>
+                <div class="cal-day-name">Wed</div>
+                <div class="cal-day-name">Thu</div>
+                <div class="cal-day-name">Fri</div>
+                <div class="cal-day-name">Sat</div>
+                <!-- Day cells are injected here by booking.js -->
+              </div>
+
+              <!-- Legend -->
+              <div class="calendar-legend">
+                <span class="legend-item"
+                  ><span class="legend-dot available"></span>Available</span
+                >
+                <span class="legend-item"
+                  ><span class="legend-dot past"></span>Unavailable</span
+                >
+              </div>
+            </div>
+
+            <!-- Shows selected date in plain English -->
+            <p class="selected-date-label" id="selectedDateLabel">
+              No date selected yet.
+            </p>
+
             <div class="form-actions">
               <button type="button" class="btn-back" id="backToStep1">
                 ← Back
+              </button>
+              <button type="button" class="btn-next" id="nextToStep3" disabled>
+                Next: Choose a Time →
               </button>
             </div>
           </div>
@@ -188,7 +235,7 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <small
-          >© <span id="year"></span>Amanda's Beauty Bar. All rights
+          >© <span id="year"></span>. Amanda's Beauty Bar. All rights
           reserved.</small
         >
         <a href="#top">Back to top ↑</a>
