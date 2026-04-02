@@ -637,8 +637,9 @@ body {
     font-size: 42px;
   }
 }
-
-/* Booking Section */
+/* ==========================================================
+   BOOKING FORM
+   ========================================================== */
 
 .booking-section {
   padding: 80px 80px;
@@ -659,9 +660,9 @@ body {
 
 .booking-title {
   font-family: "Parisienne", cursive;
-  font-size: 50px;
+  font-size: 52px;
   color: #1a0f08;
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   border-bottom: 1px solid rgba(166, 124, 0, 0.4);
 }
 
@@ -673,13 +674,11 @@ body {
   margin: 0;
 }
 
-/* ---- Step Indicator (the 1 2 3 4 progress bar) ---- */
 .step-indicator {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 45px;
-  gap: 0;
 }
 
 .step {
@@ -712,7 +711,7 @@ body {
   transition: color 0.3s ease;
 }
 
-/* Active step (current) */
+/* Active step */
 .step.active .step-number {
   background: #c9a44c;
   color: #28170b;
@@ -736,16 +735,18 @@ body {
   color: #5c3a2e;
 }
 
-/* The line connecting the dots */
+/* Connecting line between dots */
 .step-line {
   flex: 1;
   height: 2px;
   background: #e0d0c4;
   max-width: 60px;
-  margin-bottom: 22px; /* pushes line up to align with circles */
+  margin-bottom: 22px;
 }
 
-/* ---- The Form Card ---- */
+/* --------------------------------------------------------
+   FORM CARD
+   -------------------------------------------------------- */
 .booking-form {
   background: #ffffff;
   border: 1px solid rgba(40, 23, 11, 0.12);
@@ -754,7 +755,6 @@ body {
   box-shadow: 0 10px 35px rgba(40, 23, 11, 0.08);
 }
 
-/* Step title inside the form */
 .step-title {
   font-family: "Parisienne", cursive;
   font-size: 30px;
@@ -764,7 +764,9 @@ body {
   border-bottom: 1px solid rgba(166, 124, 0, 0.3);
 }
 
-/* ---- Form Groups (label + input pairs) ---- */
+/* --------------------------------------------------------
+   Step 1
+   -------------------------------------------------------- */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -814,7 +816,6 @@ body {
   padding-right: 40px;
 }
 
-/* ---- Form Action Buttons ---- */
 .form-actions {
   display: flex;
   justify-content: flex-end;
@@ -822,7 +823,6 @@ body {
   margin-top: 10px;
 }
 
-/* Next button */
 .btn-next {
   background: #c9a44c;
   color: #28170b;
@@ -843,7 +843,14 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Back button */
+.btn-next:disabled {
+  background: #e0d0c0;
+  color: #b09080;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 .btn-back {
   background: transparent;
   color: #a67c00;
@@ -863,12 +870,29 @@ body {
   color: #28170b;
 }
 
-/* Utility: hidden class used by JS to show/hide steps */
-.hidden {
-  display: none;
+.btn-confirm {
+  background: #25d366;
+  color: #fff;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* ---- Calendar Wrapper ---- */
+.btn-confirm:hover {
+  background: #1da851;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+}
+
+/* --------------------------------------------------------
+   STEP 2 — CALENDAR
+   -------------------------------------------------------- */
 .calendar {
   border: 1px solid rgba(40, 23, 11, 0.12);
   border-radius: 16px;
@@ -876,7 +900,6 @@ body {
   margin-bottom: 16px;
 }
 
-/* ---- Month Navigation (← April 2026 →) ---- */
 .calendar-nav {
   display: flex;
   align-items: center;
@@ -911,14 +934,12 @@ body {
   color: #28170b;
 }
 
-/* ---- Calendar Grid ---- */
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr); /* 7 columns = Sun to Sat */
+  grid-template-columns: repeat(7, 1fr);
   background: #fdf8f2;
 }
 
-/* Day name headers (Sun Mon Tue...) */
 .cal-day-name {
   text-align: center;
   padding: 10px 0;
@@ -931,7 +952,6 @@ body {
   border-bottom: 1px solid rgba(40, 23, 11, 0.08);
 }
 
-/* Individual day cells */
 .cal-cell {
   text-align: center;
   padding: 10px 0;
@@ -940,19 +960,16 @@ body {
   transition: all 0.2s ease;
 }
 
-/* Empty cells (before the 1st of the month) */
 .cal-empty {
   background: transparent;
 }
 
-/* Past dates — greyed out */
 .cal-past {
   color: #ccc;
   background: #f5f0eb;
   cursor: not-allowed;
 }
 
-/* Available dates — clickable */
 .cal-available {
   color: #28170b;
   cursor: pointer;
@@ -964,7 +981,6 @@ body {
   font-weight: 700;
 }
 
-/* Selected date — gold highlight */
 .cal-selected {
   background: #c9a44c !important;
   color: #28170b !important;
@@ -972,7 +988,6 @@ body {
   border-radius: 6px;
 }
 
-/* ---- Legend ---- */
 .calendar-legend {
   display: flex;
   gap: 20px;
@@ -1000,14 +1015,10 @@ body {
 .legend-dot.available {
   background: #c9a44c;
 }
-.legend-dot.booked {
-  background: #c0392b;
-}
 .legend-dot.past {
   background: #ccc;
 }
 
-/* ---- Selected Date Label ---- */
 .selected-date-label {
   font-size: 14px;
   color: #b09080;
@@ -1020,16 +1031,115 @@ body {
   font-weight: 700;
 }
 
-/* Disabled next button */
-.btn-next:disabled {
-  background: #e0d0c0;
-  color: #b09080;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
+/* --------------------------------------------------------
+   STEP 3 — TIME SLOTS
+   -------------------------------------------------------- */
+.time-intro {
+  font-size: 14px;
+  color: #5c3a2e;
+  margin: 0 0 20px;
 }
 
-/* ---- Responsive ---- */
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.time-slot {
+  padding: 14px 8px;
+  border: 1px solid rgba(40, 23, 11, 0.2);
+  border-radius: 12px;
+  background: #fdf8f2;
+  color: #28170b;
+  font-size: 14px;
+  font-family: "Times New Roman", Times, serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.time-slot:hover {
+  border-color: #c9a44c;
+  background: rgba(201, 164, 76, 0.1);
+  color: #a67c00;
+}
+
+.time-slot.time-selected {
+  background: #c9a44c;
+  border-color: #c9a44c;
+  color: #28170b;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(201, 164, 76, 0.3);
+}
+
+.selected-time-label {
+  font-size: 14px;
+  color: #b09080;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.selected-time-label.has-time {
+  color: #28170b;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------
+   STEP 4 — CONFIRMATION SUMMARY
+   -------------------------------------------------------- */
+.confirm-intro {
+  font-size: 14px;
+  color: #5c3a2e;
+  margin: 0 0 20px;
+}
+
+.booking-summary {
+  background: #fdf8f2;
+  border: 1px solid rgba(40, 23, 11, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(40, 23, 11, 0.07);
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #a67c00;
+}
+
+.summary-value {
+  font-size: 15px;
+  color: #28170b;
+  text-align: right;
+}
+
+.whatsapp-note {
+  font-size: 13px;
+  color: #5c3a2e;
+  text-align: center;
+  margin: 0 0 24px;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------- */
 @media (max-width: 990px) {
   .booking-section {
     padding: 60px 30px;
@@ -1046,10 +1156,25 @@ body {
 
 @media (max-width: 580px) {
   .booking-title {
-    font-size: 38px;
+    font-size: 42px;
   }
 
   .step-line {
     max-width: 30px;
+  }
+
+  .time-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-next,
+  .btn-back,
+  .btn-confirm {
+    width: 100%;
+    text-align: center;
   }
 }
