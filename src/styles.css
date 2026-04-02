@@ -890,7 +890,6 @@ body {
   box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
 }
 
-/* Utility class used by JS to show/hide steps */
 .hidden {
   display: none;
 }
