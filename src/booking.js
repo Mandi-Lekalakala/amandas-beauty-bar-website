@@ -1,28 +1,16 @@
-// ============================================
-// AMANDA'S BEAUTY BAR — BOOKING FORM
-// ============================================
+const WHATSAPP_NUMBER = "27766590305";
 
-// -----------------------------------------------
-// BOOKING DATA — stores what the user selects
-// We build this up across all 4 steps
-// -----------------------------------------------
 const bookingData = {
   name: "",
   phone: "",
   service: "",
-  date: "", // will be set in Step 2
-  time: "", // will be set in Step 3
+  date: "",
+  time: "",
 };
 
-// -----------------------------------------------
-// CALENDAR STATE — tracks which month is showing
-// -----------------------------------------------
 let calendarYear = new Date().getFullYear();
-let calendarMonth = new Date().getMonth(); // 0 = January, 11 = December
+let calendarMonth = new Date().getMonth();
 
-// -----------------------------------------------
-// STEP NAVIGATION
-// -----------------------------------------------
 const formSteps = [
   document.getElementById("formStep1"),
   document.getElementById("formStep2"),
@@ -38,61 +26,65 @@ const stepDots = [
 ];
 
 function goToStep(stepNumber) {
-  formSteps.forEach((step, index) => {
-    step.classList.toggle("hidden", index !== stepNumber - 1);
+  formSteps.forEach(function (step, index) {
+    if (index === stepNumber - 1) {
+      step.classList.remove("hidden");
+    } else {
+      step.classList.add("hidden");
+    }
   });
 
-  stepDots.forEach((dot, index) => {
+  stepDots.forEach(function (dot, index) {
     dot.classList.remove("active", "completed");
-    if (index < stepNumber - 1) dot.classList.add("completed");
-    else if (index === stepNumber - 1) dot.classList.add("active");
+    if (index < stepNumber - 1) {
+      dot.classList.add("completed");
+    } else if (index === stepNumber - 1) {
+      dot.classList.add("active");
+    }
   });
+
+  if (stepNumber === 4) {
+    populateSummary();
+  }
 }
 
-// -----------------------------------------------
-// STEP 1 — Validation & moving to Step 2
-// -----------------------------------------------
-document.getElementById("nextToStep2").addEventListener("click", () => {
-  const name = document.getElementById("clientName").value.trim();
-  const phone = document.getElementById("clientPhone").value.trim();
-  const service = document.getElementById("serviceSelect").value;
+function handleStep1Next() {
+  const nameValue = document.getElementById("clientName").value.trim();
+  const phoneValue = document.getElementById("clientPhone").value.trim();
+  const serviceValue = document.getElementById("serviceSelect").value;
 
-  if (!name) {
+  if (!nameValue) {
     alert("Please enter your full name.");
     return;
   }
-  if (!phone) {
+  if (!phoneValue) {
     alert("Please enter your phone number.");
     return;
   }
-  if (!service) {
+  if (!serviceValue) {
     alert("Please select a service.");
     return;
   }
 
-  // Save to bookingData
-  bookingData.name = name;
-  bookingData.phone = phone;
-  bookingData.service = service;
+  bookingData.name = nameValue;
+  bookingData.phone = phoneValue;
+  bookingData.service = serviceValue;
 
   goToStep(2);
-  renderCalendar(); // build the calendar when we arrive on step 2
-});
+  renderCalendar();
+}
 
-// -----------------------------------------------
-// STEP 2 — CALENDAR
-// -----------------------------------------------
-
-// Helper: format a Date object as "YYYY-MM-DD"
 function formatDate(year, month, day) {
-  const mm = String(month + 1).padStart(2, "0"); // month is 0-based, padStart adds a leading 0 if needed
+  const mm = String(month + 1).padStart(2, "0");
   const dd = String(day).padStart(2, "0");
   return `${year}-${mm}-${dd}`;
 }
 
-// Helper: format "YYYY-MM-DD" into a readable string like "Saturday, 5 April 2026"
 function prettyDate(dateStr) {
-  const [year, month, day] = dateStr.split("-").map(Number);
+  const parts = dateStr.split("-");
+  const year = Number(parts[0]);
+  const month = Number(parts[1]);
+  const day = Number(parts[2]);
   const d = new Date(year, month - 1, day);
   return d.toLocaleDateString("en-ZA", {
     weekday: "long",
@@ -102,12 +94,8 @@ function prettyDate(dateStr) {
   });
 }
 
-// Renders the calendar grid for calendarYear / calendarMonth
 function renderCalendar() {
   const grid = document.getElementById("calendarGrid");
-  const monthLabel = document.getElementById("calendarMonthLabel");
-
-  // Update the month/year label at the top
   const monthNames = [
     "January",
     "February",
@@ -122,31 +110,27 @@ function renderCalendar() {
     "November",
     "December",
   ];
-  monthLabel.textContent = `${monthNames[calendarMonth]} ${calendarYear}`;
 
-  // Clear old grid cells (but keep the day-name headers)
+  document.getElementById("calendarMonthLabel").textContent =
+    `${monthNames[calendarMonth]} ${calendarYear}`;
+
   const oldCells = grid.querySelectorAll(".cal-cell");
-  oldCells.forEach((cell) => cell.remove());
+  oldCells.forEach(function (cell) {
+    cell.remove();
+  });
 
-  // Today's date for comparison
   const today = new Date();
-  today.setHours(0, 0, 0, 0); // strip time so comparison is date-only
+  today.setHours(0, 0, 0, 0);
 
-  // What day of the week does the 1st fall on? (0=Sun, 6=Sat)
-  const firstDayOfMonth = new Date(calendarYear, calendarMonth, 1).getDay();
-
-  // How many days are in this month?
+  const firstDay = new Date(calendarYear, calendarMonth, 1).getDay();
   const daysInMonth = new Date(calendarYear, calendarMonth + 1, 0).getDate();
 
-  // Add empty cells for days before the 1st
-  // (e.g. if 1st is Wednesday, we need 3 blank cells)
-  for (let i = 0; i < firstDayOfMonth; i++) {
-    const empty = document.createElement("div");
-    empty.classList.add("cal-cell", "cal-empty");
-    grid.appendChild(empty);
+  for (let i = 0; i < firstDay; i++) {
+    const emptyCell = document.createElement("div");
+    emptyCell.classList.add("cal-cell", "cal-empty");
+    grid.appendChild(emptyCell);
   }
 
-  // Add a cell for each day of the month
   for (let day = 1; day <= daysInMonth; day++) {
     const cell = document.createElement("div");
     cell.classList.add("cal-cell");
@@ -155,19 +139,20 @@ function renderCalendar() {
     const dateStr = formatDate(calendarYear, calendarMonth, day);
     const thisDate = new Date(calendarYear, calendarMonth, day);
 
-    // --- Apply states ---
-
-    // 1. Past date → greyed out, not clickable
     if (thisDate < today) {
       cell.classList.add("cal-past");
-    }
-    // 2. Available date → clickable
-    else {
+    } else {
       cell.classList.add("cal-available");
-      cell.addEventListener("click", () => selectDate(dateStr, cell));
+      cell.addEventListener(
+        "click",
+        (function (clickedDateStr, clickedCell) {
+          return function () {
+            handleDateClick(clickedDateStr, clickedCell);
+          };
+        })(dateStr, cell),
+      );
     }
 
-    // 4. Already selected → highlight it
     if (dateStr === bookingData.date) {
       cell.classList.add("cal-selected");
     }
@@ -175,31 +160,23 @@ function renderCalendar() {
     grid.appendChild(cell);
   }
 
-  // Update the selected date label below the calendar
   updateDateLabel();
 }
 
-// Called when user clicks an available date
-function selectDate(dateStr, cell) {
-  // Remove highlight from previously selected cell
-  document.querySelectorAll(".cal-cell.cal-selected").forEach((c) => {
+function handleDateClick(dateStr, cell) {
+  const allSelected = document.querySelectorAll(".cal-cell.cal-selected");
+  allSelected.forEach(function (c) {
     c.classList.remove("cal-selected");
   });
 
-  // Highlight the clicked cell
   cell.classList.add("cal-selected");
-
-  // Save the date
   bookingData.date = dateStr;
 
-  // Update the label
   updateDateLabel();
 
-  // Enable the Next button
   document.getElementById("nextToStep3").disabled = false;
 }
 
-// Shows the selected date in plain English below the calendar
 function updateDateLabel() {
   const label = document.getElementById("selectedDateLabel");
   if (bookingData.date) {
@@ -211,47 +188,148 @@ function updateDateLabel() {
   }
 }
 
-// Prev month button
-document.getElementById("calPrev").addEventListener("click", () => {
-  calendarMonth--;
+function handleCalPrev() {
+  calendarMonth = calendarMonth - 1;
   if (calendarMonth < 0) {
     calendarMonth = 11;
-    calendarYear--;
+    calendarYear = calendarYear - 1;
   }
   renderCalendar();
-});
+}
 
-// Next month button
-document.getElementById("calNext").addEventListener("click", () => {
-  calendarMonth++;
+function handleCalNext() {
+  calendarMonth = calendarMonth + 1;
   if (calendarMonth > 11) {
     calendarMonth = 0;
-    calendarYear++;
+    calendarYear = calendarYear + 1;
   }
   renderCalendar();
-});
+}
 
-// Step 2 → Step 3
-document.getElementById("nextToStep3").addEventListener("click", () => {
+function handleStep2Next() {
   if (!bookingData.date) {
     alert("Please select a date.");
     return;
   }
   goToStep(3);
-});
+}
 
-// Step 2 → back to Step 1
-document.getElementById("backToStep1").addEventListener("click", () => {
+function handleTimeSlotClick(slot) {
+  const allSlots = document.querySelectorAll(".time-slot");
+  allSlots.forEach(function (s) {
+    s.classList.remove("time-selected");
+  });
+
+  slot.classList.add("time-selected");
+  bookingData.time = slot.dataset.time;
+
+  updateTimeLabel();
+
+  document.getElementById("nextToStep4").disabled = false;
+}
+
+function updateTimeLabel() {
+  const label = document.getElementById("selectedTimeLabel");
+  const timeParts = bookingData.time.split(":");
+  const hours = Number(timeParts[0]);
+  const minutes = Number(timeParts[1]);
+  const d = new Date();
+  d.setHours(hours, minutes);
+  const friendly = d.toLocaleTimeString("en-ZA", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+  label.textContent = `Selected: ${friendly}`;
+  label.classList.add("has-time");
+}
+
+function handleStep3Next() {
+  if (!bookingData.time) {
+    alert("Please select a time.");
+    return;
+  }
+  goToStep(4);
+}
+
+function populateSummary() {
+  const timeParts = bookingData.time.split(":");
+  const hours = Number(timeParts[0]);
+  const minutes = Number(timeParts[1]);
+  const d = new Date();
+  d.setHours(hours, minutes);
+  const friendlyTime = d.toLocaleTimeString("en-ZA", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+
+  document.getElementById("summaryName").textContent = bookingData.name;
+  document.getElementById("summaryPhone").textContent = bookingData.phone;
+  document.getElementById("summaryService").textContent = bookingData.service;
+  document.getElementById("summaryDate").textContent = prettyDate(
+    bookingData.date,
+  );
+  document.getElementById("summaryTime").textContent = friendlyTime;
+}
+
+function handleConfirmBooking() {
+  const summaryTime = document.getElementById("summaryTime").textContent;
+
+  const messageText =
+    "Hi Amanda! I'd like to book an appointment.\n\n" +
+    "Name: " +
+    bookingData.name +
+    "\n" +
+    "Phone: " +
+    bookingData.phone +
+    "\n" +
+    "Service: " +
+    bookingData.service +
+    "\n" +
+    "Date: " +
+    prettyDate(bookingData.date) +
+    "\n" +
+    "Time: " +
+    summaryTime;
+
+  const encodedMessage = encodeURIComponent(messageText);
+  const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+  window.open(whatsappURL, "_blank");
+}
+
+// Event Listeners
+document
+  .getElementById("nextToStep2")
+  .addEventListener("click", handleStep1Next);
+document.getElementById("backToStep1").addEventListener("click", function () {
   goToStep(1);
 });
 
-// -----------------------------------------------
-// STEP 3 & 4 — back buttons (placeholders for now)
-// -----------------------------------------------
-document.getElementById("backToStep2").addEventListener("click", () => {
+document.getElementById("calPrev").addEventListener("click", handleCalPrev);
+document.getElementById("calNext").addEventListener("click", handleCalNext);
+document
+  .getElementById("nextToStep3")
+  .addEventListener("click", handleStep2Next);
+document.getElementById("backToStep2").addEventListener("click", function () {
   goToStep(2);
 });
 
-document.getElementById("backToStep3").addEventListener("click", () => {
+const timeSlotElements = document.querySelectorAll(".time-slot");
+timeSlotElements.forEach(function (slot) {
+  slot.addEventListener("click", function () {
+    handleTimeSlotClick(slot);
+  });
+});
+
+document
+  .getElementById("nextToStep4")
+  .addEventListener("click", handleStep3Next);
+document.getElementById("backToStep3").addEventListener("click", function () {
   goToStep(3);
 });
+
+document
+  .getElementById("confirmBooking")
+  .addEventListener("click", handleConfirmBooking);
