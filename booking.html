@@ -49,195 +49,244 @@
             Fill in your details to reserve your spot.
           </p>
         </header>
-      </div>
-      <!-- Step Indicator -->
 
-      <div class="step-indicator">
-        <div class="step active" id="step-dot-1">
-          <span class="step-number">1</span>
-          <span class="step-label">Your Details</span>
-        </div>
-        <div class="step-line">-</div>
-        <div class="step active" id="step-dot-2">
-          <span class="step-number">2</span>
-          <span class="step-label">Pick A Date</span>
-        </div>
-        <div class="step-line">-</div>
-        <div class="step active" id="step-dot-3">
-          <span class="step-number">3</span>
-          <span class="step-label">Pick A Time</span>
-        </div>
-        <div class="step-line">-</div>
-        <div class="step active" id="step-dot-4">
-          <span class="step-number">4</span>
-          <span class="step-label">Confirm</span>
-        </div>
-      </div>
+        <!-- Step Indicator -->
 
-      <form class="booking-form" id="bookingForm">
-        <div class="form-step" id="formStep1">
-          <h3 class="step-title">Step 1: Your Details</h3>
-
-          <div class="form-group">
-            <label for="clientName">Full Name</label>
-            <input
-              type="text"
-              id="clientName"
-              placeholder="e.g Thabo Nkosi"
-              required
-            />
+        <div class="step-indicator">
+          <div class="step active" id="step-dot-1">
+            <span class="step-number">1</span>
+            <span class="step-label">Your Details</span>
           </div>
-
-          <div class="form-group">
-            <label for="clientPhone">Phone Number</label>
-            <input
-              type="tel"
-              id="clientPhone"
-              placeholder="e.g. 012 345 6789"
-              required
-            />
+          <div class="step-line">-</div>
+          <div class="step active" id="step-dot-2">
+            <span class="step-number">2</span>
+            <span class="step-label">Pick A Date</span>
           </div>
-
-          <div class="form-group">
-            <label for="serviceSelect"> Choose a Service </label>
-            <select id="serviceSelect" required>
-              <option value="" disabled selected>-- Select a Service --</option>
-              <optgroup label="Braids">
-                <option value="Braids - R350">Braids – R350</option>
-                <option value="Straight Up - R250">Straight Up – R250</option>
-                <option value="Straight Back - R200">
-                  Straight Back – R200
-                </option>
-                <option value="Wash - R100">Wash – R100</option>
-                <option value="Relax - R50">Relax – R50</option>
-              </optgroup>
-              <optgroup label="Nails & Lashes">
-                <option value="Manicure - R200">Manicure – R200</option>
-                <option value="Pedicure - R150">Pedicure – R150</option>
-                <option value="Lash Extensions - R150">
-                  Lash Extensions – R150
-                </option>
-              </optgroup>
-              <optgroup label="Combos">
-                <option value="Nails & Lashes - R250">
-                  Nails & Lashes – R250
-                </option>
-                <option value="Braids & Lashes - R350">
-                  Braids & Lashes – R350
-                </option>
-                <option value="Manicure & Pedicure - R250">
-                  Manicure & Pedicure – R250
-                </option>
-                <option value="Manicure & Lashes & Braids - R450">
-                  Manicure & Lashes & Braids – R450
-                </option>
-              </optgroup>
-            </select>
+          <div class="step-line">-</div>
+          <div class="step active" id="step-dot-3">
+            <span class="step-number">3</span>
+            <span class="step-label">Pick A Time</span>
           </div>
-
-          <div class="form-actions">
-            <button type="button" class="btn-next" id="nextToStep2">
-              Next: Choose a Date →
-            </button>
+          <div class="step-line">-</div>
+          <div class="step active" id="step-dot-4">
+            <span class="step-number">4</span>
+            <span class="step-label">Confirm</span>
           </div>
         </div>
-        <!-- ===== STEP 2: Calendar ===== -->
-        <div class="form-step hidden" id="formStep2">
-          <h3 class="step-title">Step 2: Pick a Date</h3>
 
-          <div class="calendar">
-            <div class="calendar-nav">
-              <button type="button" class="cal-nav-btn" id="calPrev">
-                &#8592;
-              </button>
-              <span class="calendar-month-label" id="calendarMonthLabel"
-                >April 2026</span
-              >
-              <button type="button" class="cal-nav-btn" id="calNext">
-                &#8594;
+        <form class="booking-form" id="bookingForm">
+          <div class="form-step" id="formStep1">
+            <h3 class="step-title">Step 1: Your Details</h3>
+
+            <div class="form-group">
+              <label for="clientName">Full Name</label>
+              <input
+                type="text"
+                id="clientName"
+                placeholder="e.g Thabo Nkosi"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="clientPhone">Phone Number</label>
+              <input
+                type="tel"
+                id="clientPhone"
+                placeholder="e.g. 012 345 6789"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="serviceSelect"> Choose a Service </label>
+              <select id="serviceSelect" required>
+                <option value="" disabled selected>
+                  -- Select a Service --
+                </option>
+                <optgroup label="Braids">
+                  <option value="Braids - R350">Braids – R350</option>
+                  <option value="Straight Up - R250">Straight Up – R250</option>
+                  <option value="Straight Back - R200">
+                    Straight Back – R200
+                  </option>
+                  <option value="Wash - R100">Wash – R100</option>
+                  <option value="Relax - R50">Relax – R50</option>
+                </optgroup>
+                <optgroup label="Nails & Lashes">
+                  <option value="Manicure - R200">Manicure – R200</option>
+                  <option value="Pedicure - R150">Pedicure – R150</option>
+                  <option value="Lash Extensions - R150">
+                    Lash Extensions – R150
+                  </option>
+                </optgroup>
+                <optgroup label="Combos">
+                  <option value="Nails & Lashes - R250">
+                    Nails & Lashes – R250
+                  </option>
+                  <option value="Braids & Lashes - R350">
+                    Braids & Lashes – R350
+                  </option>
+                  <option value="Manicure & Pedicure - R250">
+                    Manicure & Pedicure – R250
+                  </option>
+                  <option value="Manicure & Lashes & Braids - R450">
+                    Manicure & Lashes & Braids – R450
+                  </option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn-next" id="nextToStep2">
+                Next: Choose a Date →
               </button>
             </div>
+          </div>
+          <!-- ===== STEP 2: Calendar ===== -->
+          <div class="form-step hidden" id="formStep2">
+            <h3 class="step-title">Step 2: Pick a Date</h3>
 
-            <div class="calendar-grid" id="calendarGrid">
-              <div class="cal-day-name">Sun</div>
-              <div class="cal-day-name">Mon</div>
-              <div class="cal-day-name">Tue</div>
-              <div class="cal-day-name">Wed</div>
-              <div class="cal-day-name">Thu</div>
-              <div class="cal-day-name">Fri</div>
-              <div class="cal-day-name">Sat</div>
+            <div class="calendar">
+              <div class="calendar-nav">
+                <button type="button" class="cal-nav-btn" id="calPrev">
+                  &#8592;
+                </button>
+                <span class="calendar-month-label" id="calendarMonthLabel"
+                  >April 2026</span
+                >
+                <button type="button" class="cal-nav-btn" id="calNext">
+                  &#8594;
+                </button>
+              </div>
+
+              <div class="calendar-grid" id="calendarGrid">
+                <div class="cal-day-name">Sun</div>
+                <div class="cal-day-name">Mon</div>
+                <div class="cal-day-name">Tue</div>
+                <div class="cal-day-name">Wed</div>
+                <div class="cal-day-name">Thu</div>
+                <div class="cal-day-name">Fri</div>
+                <div class="cal-day-name">Sat</div>
+              </div>
+
+              <div class="calendar-legend">
+                <span class="legend-item"
+                  ><span class="legend-dot available"></span>Available</span
+                >
+                <span class="legend-item"
+                  ><span class="legend-dot past"></span>Unavailable</span
+                >
+              </div>
             </div>
 
-            <div class="calendar-legend">
-              <span class="legend-item"
-                ><span class="legend-dot available"></span>Available</span
-              >
-              <span class="legend-item"
-                ><span class="legend-dot past"></span>Unavailable</span
-              >
+            <p class="selected-date-label" id="selectedDateLabel">
+              No date selected yet.
+            </p>
+
+            <div class="form-actions">
+              <button type="button" class="btn-back" id="backToStep1">
+                ← Back
+              </button>
+              <button type="button" class="btn-next" id="nextToStep3" disabled>
+                Next: Choose a Time →
+              </button>
             </div>
           </div>
+          <!-- ===== STEP 3: Time Slots ===== -->
+          <div class="form-step hidden" id="formStep3">
+            <h3 class="step-title">Step 3: Pick a Time</h3>
 
-          <p class="selected-date-label" id="selectedDateLabel">
-            No date selected yet.
-          </p>
+            <p class="time-intro">Choose an available time slot.</p>
 
-          <div class="form-actions">
-            <button type="button" class="btn-back" id="backToStep1">
-              ← Back
-            </button>
-            <button type="button" class="btn-next" id="nextToStep3" disabled>
-              Next: Choose a Time →
-            </button>
+            <div class="time-grid" id="timeGrid">
+              <button type="button" class="time-slot" data-time="09:00">
+                9:00 AM
+              </button>
+              <button type="button" class="time-slot" data-time="10:00">
+                10:00 AM
+              </button>
+              <button type="button" class="time-slot" data-time="11:00">
+                11:00 AM
+              </button>
+              <button type="button" class="time-slot" data-time="12:00">
+                12:00 PM
+              </button>
+              <button type="button" class="time-slot" data-time="13:00">
+                1:00 PM
+              </button>
+              <button type="button" class="time-slot" data-time="14:00">
+                2:00 PM
+              </button>
+              <button type="button" class="time-slot" data-time="15:00">
+                3:00 PM
+              </button>
+              <button type="button" class="time-slot" data-time="16:00">
+                4:00 PM
+              </button>
+            </div>
+
+            <p class="selected-time-label" id="selectedTimeLabel">
+              No time selected yet.
+            </p>
+
+            <div class="form-actions">
+              <button type="button" class="btn-back" id="backToStep2">
+                ← Back
+              </button>
+              <button type="button" class="btn-next" id="nextToStep4" disabled>
+                Next: Confirm →
+              </button>
+            </div>
           </div>
-        </div>
-        <!-- ===== STEP 3: Time Slots ===== -->
-        <div class="form-step hidden" id="formStep3">
-          <h3 class="step-title">Step 3: Pick a Time</h3>
+          <!-- ===== STEP 4: Confirm Booking ===== -->
+          <div class="form-step hidden" id="formStep4">
+            <h3 class="step-title">Step 4: Confirm Booking</h3>
 
-          <p class="time-intro">Choose an available time slot.</p>
+            <p class="confirm-intro">
+              Please check your details before confirming.
+            </p>
 
-          <div class="time-grid" id="timeGrid">
-            <button type="button" class="time-slot" data-time="09:00">
-              9:00 AM
-            </button>
-            <button type="button" class="time-slot" data-time="10:00">
-              10:00 AM
-            </button>
-            <button type="button" class="time-slot" data-time="11:00">
-              11:00 AM
-            </button>
-            <button type="button" class="time-slot" data-time="12:00">
-              12:00 PM
-            </button>
-            <button type="button" class="time-slot" data-time="13:00">
-              1:00 PM
-            </button>
-            <button type="button" class="time-slot" data-time="14:00">
-              2:00 PM
-            </button>
-            <button type="button" class="time-slot" data-time="15:00">
-              3:00 PM
-            </button>
-            <button type="button" class="time-slot" data-time="16:00">
-              4:00 PM
-            </button>
+            <!-- Summary card — filled in by JS -->
+            <div class="booking-summary">
+              <div class="summary-row">
+                <span class="summary-label">Name</span>
+                <span class="summary-value" id="summaryName">—</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-label">Phone</span>
+                <span class="summary-value" id="summaryPhone">—</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-label">Service</span>
+                <span class="summary-value" id="summaryService">—</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-label">Date</span>
+                <span class="summary-value" id="summaryDate">—</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-label">Time</span>
+                <span class="summary-value" id="summaryTime">—</span>
+              </div>
+            </div>
+
+            <p class="whatsapp-note">
+              Tapping <strong>Confirm & Book</strong> will open WhatsApp with
+              your booking details ready to send to Amanda.
+            </p>
+
+            <div class="form-actions">
+              <button type="button" class="btn-back" id="backToStep3">
+                ← Back
+              </button>
+              <button type="button" class="btn-confirm" id="confirmBooking">
+                Confirm & Book via WhatsApp ✓
+              </button>
+            </div>
           </div>
-
-          <p class="selected-time-label" id="selectedTimeLabel">
-            No time selected yet.
-          </p>
-
-          <div class="form-actions">
-            <button type="button" class="btn-back" id="backToStep2">
-              ← Back
-            </button>
-            <button type="button" class="btn-next" id="nextToStep4" disabled>
-              Next: Confirm →
-            </button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </section>
     <!-- FOOTER -->
     <footer class="site-footer">
