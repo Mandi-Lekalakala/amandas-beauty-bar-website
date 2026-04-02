@@ -563,7 +563,7 @@ body {
     transition: transform 0.35s ease;
     z-index: 999;
     padding: 80px 30px 30px;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.4);
+    /* box-shadow: -4px 0 20px rgba(0, 0, 0, 0.4); */
     box-sizing: border-box;
   }
 
