@@ -1,29 +1,55 @@
-# Amanda's Beauty Bar Website (IN PROGRESS)
-
-A responsive multi-page beauty salon website built with HTML, CSS, and JavaScript.  
-This project was created to showcase a clean, elegant, and mobile-friendly frontend experience for a beauty business brand.
-
+# Amanda's Beauty Bar 💄
+ 
+A responsive multi-page beauty salon website built with HTML, CSS, and JavaScript. Created for a real client to give their beauty business a professional online presence with a fully functional booking experience.
+ 
+🔗 **Live Site:** [amandas-beauty-bar](https://amandas-beauty-bar.netlify.app/)
+ 
+---
+ 
 ## Features
+ 
 - Responsive layout for mobile and desktop
-- Fixed navigation with smooth section linking
+- Sticky navigation with smooth scroll section linking
+- Mobile hamburger menu with slide-in drawer
 - Hero section with strong visual branding
-- Services and booking call-to-action sections
-- Multi-page structure
-- Mobile navigation behavior
-- Styled buttons and polished UI sections
-
+- Services section with pricing
+- Photo gallery
+- Multi-step booking form (details → date → time → confirm)
+- WhatsApp redirect with pre-filled booking message
+- Polished UI with consistent luxury brand aesthetic
+ 
+---
+ 
 ## Built With
+ 
 - HTML5
 - CSS3
-- JavaScript
-- Responsive Design
-- GitHub
-
+- Vanilla JavaScript
+- Google Fonts (Parisienne)
+- GitHub Pages (deployment)
+ 
+---
+ 
+## Pages
+ 
+| Page | Description |
+|------|-------------|
+| `index.html` | Homepage — hero, about, services, contact |
+| `gallery.html` | Photo gallery of salon work |
+| `booking.html` | Multi-step booking form |
+ 
+---
+ 
+## Booking Flow
+ 
+1. Client fills in name, phone number and selects a service
+2. Client picks a date from an interactive calendar
+3. Client selects a time slot
+4. Client reviews a booking summary and confirms
+5. WhatsApp opens with a pre-filled message ready to send to the stylist
+ 
+---
+ 
 ## Project Focus
-This project helped me practice building a client-style business website while focusing on responsive design, navigation behavior, UI structure, and translating a brand vision into a functional frontend interface.
-
-## Upcoming Improvements
-- Add booking form validation
-- Improve accessibility
-- Add more interactive JavaScript features
-- Connect booking flow to a live form or backend
+ 
+This project gave me hands-on experience building a real client-facing website from scratch. Key areas of focus included responsive design, multi-page structure, JavaScript DOM manipulation, form validation, and translating a brand vision into a functional and polished frontend interface.
