@@ -277,7 +277,7 @@ function handleConfirmBooking() {
   const summaryTime = document.getElementById("summaryTime").textContent;
 
   const messageText =
-    "Hi Amanda! I'd like to book an appointment.\n\n" +
+    "Hi Amanda! I'd like to book an appointment.💕\n\n" +
     "Name: " +
     bookingData.name +
     "\n" +
