@@ -43,193 +43,201 @@
     <!-- ========== BOOKING SECTION ========== -->
     <section class="booking-section">
       <div class="booking-container">
-        <!-- Header -->
         <header class="booking-header">
           <h2 class="booking-title">Book an Appointment</h2>
           <p class="booking-subtitle">
             Fill in your details to reserve your spot.
           </p>
         </header>
+      </div>
+      <!-- Step Indicator -->
 
-        <!-- STEP INDICATOR (shows which step the user is on) -->
-        <div class="step-indicator">
-          <div class="step active" id="step-dot-1">
-            <span class="step-number">1</span>
-            <span class="step-label">Your Details</span>
+      <div class="step-indicator">
+        <div class="step active" id="step-dot-1">
+          <span class="step-number">1</span>
+          <span class="step-label">Your Details</span>
+        </div>
+        <div class="step-line">-</div>
+        <div class="step active" id="step-dot-2">
+          <span class="step-number">2</span>
+          <span class="step-label">Pick A Date</span>
+        </div>
+        <div class="step-line">-</div>
+        <div class="step active" id="step-dot-3">
+          <span class="step-number">3</span>
+          <span class="step-label">Pick A Time</span>
+        </div>
+        <div class="step-line">-</div>
+        <div class="step active" id="step-dot-4">
+          <span class="step-number">4</span>
+          <span class="step-label">Confirm</span>
+        </div>
+      </div>
+
+      <form class="booking-form" id="bookingForm">
+        <div class="form-step" id="formStep1">
+          <h3 class="step-title">Step 1: Your Details</h3>
+
+          <div class="form-group">
+            <label for="clientName">Full Name</label>
+            <input
+              type="text"
+              id="clientName"
+              placeholder="e.g Thabo Nkosi"
+              required
+            />
           </div>
-          <div class="step-line"></div>
-          <div class="step" id="step-dot-2">
-            <span class="step-number">2</span>
-            <span class="step-label">Pick a Date</span>
+
+          <div class="form-group">
+            <label for="clientPhone">Phone Number</label>
+            <input
+              type="tel"
+              id="clientPhone"
+              placeholder="e.g. 012 345 6789"
+              required
+            />
           </div>
-          <div class="step-line"></div>
-          <div class="step" id="step-dot-3">
-            <span class="step-number">3</span>
-            <span class="step-label">Pick a Time</span>
+
+          <div class="form-group">
+            <label for="serviceSelect"> Choose a Service </label>
+            <select id="serviceSelect" required>
+              <option value="" disabled selected>-- Select a Service --</option>
+              <optgroup label="Braids">
+                <option value="Braids - R350">Braids – R350</option>
+                <option value="Straight Up - R250">Straight Up – R250</option>
+                <option value="Straight Back - R200">
+                  Straight Back – R200
+                </option>
+                <option value="Wash - R100">Wash – R100</option>
+                <option value="Relax - R50">Relax – R50</option>
+              </optgroup>
+              <optgroup label="Nails & Lashes">
+                <option value="Manicure - R200">Manicure – R200</option>
+                <option value="Pedicure - R150">Pedicure – R150</option>
+                <option value="Lash Extensions - R150">
+                  Lash Extensions – R150
+                </option>
+              </optgroup>
+              <optgroup label="Combos">
+                <option value="Nails & Lashes - R250">
+                  Nails & Lashes – R250
+                </option>
+                <option value="Braids & Lashes - R350">
+                  Braids & Lashes – R350
+                </option>
+                <option value="Manicure & Pedicure - R250">
+                  Manicure & Pedicure – R250
+                </option>
+                <option value="Manicure & Lashes & Braids - R450">
+                  Manicure & Lashes & Braids – R450
+                </option>
+              </optgroup>
+            </select>
           </div>
-          <div class="step-line"></div>
-          <div class="step" id="step-dot-4">
-            <span class="step-number">4</span>
-            <span class="step-label">Confirm</span>
+
+          <div class="form-actions">
+            <button type="button" class="btn-next" id="nextToStep2">
+              Next: Choose a Date →
+            </button>
           </div>
         </div>
+        <!-- ===== STEP 2: Calendar ===== -->
+        <div class="form-step hidden" id="formStep2">
+          <h3 class="step-title">Step 2: Pick a Date</h3>
 
-        <!-- FORM -->
-        <form class="booking-form" id="bookingForm">
-          <!-- ===== STEP 1: Personal Details & Service ===== -->
-          <div class="form-step" id="formStep1">
-            <h3 class="step-title">Step 1: Your Details</h3>
-
-            <div class="form-group">
-              <label for="clientName">Full Name</label>
-              <input
-                type="text"
-                id="clientName"
-                name="clientName"
-                placeholder="e.g. Thabo Nkosi"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="clientPhone">Phone Number</label>
-              <input
-                type="tel"
-                id="clientPhone"
-                name="clientPhone"
-                placeholder="e.g. 076 659 0305"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="serviceSelect">Choose a Service</label>
-              <select id="serviceSelect" name="serviceSelect" required>
-                <option value="" disabled selected>
-                  -- Select a service --
-                </option>
-                <optgroup label="Braids">
-                  <option value="Braids - R350">Braids – R350</option>
-                  <option value="Straight Up - R250">Straight Up – R250</option>
-                  <option value="Straight Back - R200">
-                    Straight Back – R200
-                  </option>
-                  <option value="Wash - R100">Wash – R100</option>
-                  <option value="Relax - R50">Relax – R50</option>
-                </optgroup>
-                <optgroup label="Nails & Lashes">
-                  <option value="Manicure - R200">Manicure – R200</option>
-                  <option value="Pedicure - R150">Pedicure – R150</option>
-                  <option value="Lash Extensions - R150">
-                    Lash Extensions – R150
-                  </option>
-                </optgroup>
-                <optgroup label="Combos">
-                  <option value="Nails & Lashes - R250">
-                    Nails & Lashes – R250
-                  </option>
-                  <option value="Braids & Lashes - R350">
-                    Braids & Lashes – R350
-                  </option>
-                  <option value="Manicure & Pedicure - R250">
-                    Manicure & Pedicure – R250
-                  </option>
-                  <option value="Manicure & Lashes & Braids - R450">
-                    Manicure & Lashes & Braids – R450
-                  </option>
-                </optgroup>
-              </select>
-            </div>
-
-            <!-- Next button -->
-            <div class="form-actions">
-              <button type="button" class="btn-next" id="nextToStep2">
-                Next: Choose a Date →
+          <div class="calendar">
+            <div class="calendar-nav">
+              <button type="button" class="cal-nav-btn" id="calPrev">
+                &#8592;
               </button>
+              <span class="calendar-month-label" id="calendarMonthLabel"
+                >April 2026</span
+              >
+              <button type="button" class="cal-nav-btn" id="calNext">
+                &#8594;
+              </button>
+            </div>
+
+            <div class="calendar-grid" id="calendarGrid">
+              <div class="cal-day-name">Sun</div>
+              <div class="cal-day-name">Mon</div>
+              <div class="cal-day-name">Tue</div>
+              <div class="cal-day-name">Wed</div>
+              <div class="cal-day-name">Thu</div>
+              <div class="cal-day-name">Fri</div>
+              <div class="cal-day-name">Sat</div>
+            </div>
+
+            <div class="calendar-legend">
+              <span class="legend-item"
+                ><span class="legend-dot available"></span>Available</span
+              >
+              <span class="legend-item"
+                ><span class="legend-dot past"></span>Unavailable</span
+              >
             </div>
           </div>
 
-          <!-- ===== STEP 2, 3, 4 coming soon ===== -->
-          <!-- ===== STEP 2: Calendar ===== -->
-          <div class="form-step hidden" id="formStep2">
-            <h3 class="step-title">Step 2: Pick a Date</h3>
+          <p class="selected-date-label" id="selectedDateLabel">
+            No date selected yet.
+          </p>
 
-            <!-- Calendar widget -->
-            <div class="calendar">
-              <!-- Month navigation -->
-              <div class="calendar-nav">
-                <button type="button" class="cal-nav-btn" id="calPrev">
-                  &#8592;
-                </button>
-                <span class="calendar-month-label" id="calendarMonthLabel"
-                  >April 2026</span
-                >
-                <button type="button" class="cal-nav-btn" id="calNext">
-                  &#8594;
-                </button>
-              </div>
+          <div class="form-actions">
+            <button type="button" class="btn-back" id="backToStep1">
+              ← Back
+            </button>
+            <button type="button" class="btn-next" id="nextToStep3" disabled>
+              Next: Choose a Time →
+            </button>
+          </div>
+        </div>
+        <!-- ===== STEP 3: Time Slots ===== -->
+        <div class="form-step hidden" id="formStep3">
+          <h3 class="step-title">Step 3: Pick a Time</h3>
 
-              <!-- Day name headers: Sun Mon Tue ... -->
-              <div class="calendar-grid" id="calendarGrid">
-                <div class="cal-day-name">Sun</div>
-                <div class="cal-day-name">Mon</div>
-                <div class="cal-day-name">Tue</div>
-                <div class="cal-day-name">Wed</div>
-                <div class="cal-day-name">Thu</div>
-                <div class="cal-day-name">Fri</div>
-                <div class="cal-day-name">Sat</div>
-                <!-- Day cells are injected here by booking.js -->
-              </div>
+          <p class="time-intro">Choose an available time slot.</p>
 
-              <!-- Legend -->
-              <div class="calendar-legend">
-                <span class="legend-item"
-                  ><span class="legend-dot available"></span>Available</span
-                >
-                <span class="legend-item"
-                  ><span class="legend-dot past"></span>Unavailable</span
-                >
-              </div>
-            </div>
-
-            <!-- Shows selected date in plain English -->
-            <p class="selected-date-label" id="selectedDateLabel">
-              No date selected yet.
-            </p>
-
-            <div class="form-actions">
-              <button type="button" class="btn-back" id="backToStep1">
-                ← Back
-              </button>
-              <button type="button" class="btn-next" id="nextToStep3" disabled>
-                Next: Choose a Time →
-              </button>
-            </div>
+          <div class="time-grid" id="timeGrid">
+            <button type="button" class="time-slot" data-time="09:00">
+              9:00 AM
+            </button>
+            <button type="button" class="time-slot" data-time="10:00">
+              10:00 AM
+            </button>
+            <button type="button" class="time-slot" data-time="11:00">
+              11:00 AM
+            </button>
+            <button type="button" class="time-slot" data-time="12:00">
+              12:00 PM
+            </button>
+            <button type="button" class="time-slot" data-time="13:00">
+              1:00 PM
+            </button>
+            <button type="button" class="time-slot" data-time="14:00">
+              2:00 PM
+            </button>
+            <button type="button" class="time-slot" data-time="15:00">
+              3:00 PM
+            </button>
+            <button type="button" class="time-slot" data-time="16:00">
+              4:00 PM
+            </button>
           </div>
 
-          <div class="form-step hidden" id="formStep3">
-            <h3 class="step-title">Step 3: Pick a Time</h3>
-            <p style="color: #5c3a2e">Time slots coming soon!</p>
-            <div class="form-actions">
-              <button type="button" class="btn-back" id="backToStep2">
-                ← Back
-              </button>
-            </div>
-          </div>
+          <p class="selected-time-label" id="selectedTimeLabel">
+            No time selected yet.
+          </p>
 
-          <div class="form-step hidden" id="formStep4">
-            <h3 class="step-title">Step 4: Confirm Booking</h3>
-            <p style="color: #5c3a2e">
-              Confirmation + WhatsApp redirect coming soon!
-            </p>
-            <div class="form-actions">
-              <button type="button" class="btn-back" id="backToStep3">
-                ← Back
-              </button>
-            </div>
+          <div class="form-actions">
+            <button type="button" class="btn-back" id="backToStep2">
+              ← Back
+            </button>
+            <button type="button" class="btn-next" id="nextToStep4" disabled>
+              Next: Confirm →
+            </button>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </section>
     <!-- FOOTER -->
     <footer class="site-footer">
