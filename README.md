@@ -34,8 +34,7 @@ A responsive multi-page beauty salon website built with HTML, CSS, and JavaScrip
 
 - HTML5
 - CSS3
-- Vanilla JavaScript
-- Google Fonts (Parisienne)
+- JavaScript
 - Netlify (deployment)
 
 ---
