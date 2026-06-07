@@ -1,8 +1,8 @@
 # Amanda's Beauty Bar 💄
 
-A responsive multi-page beauty salon website built with HTML, CSS, and JavaScript. Created for a real client to give their beauty business a professional online presence with a fully functional booking experience.
+A responsive multi-page beauty salon mobile firist website built with HTML, CSS, and JavaScript. Created for a real client to give their beauty business a professional online presence with a fully functional booking experience.
 
-🔗 **Live Site:** https://amandas-beauty-bar.netlify.app/
+🔗 **Live Site:** https://amandas-beauty-bar.netlify.app/ - view on mobile device
 
 ![Amanda's Beauty Bar](screenshots/amanda's-beauty-bar.png)
 
